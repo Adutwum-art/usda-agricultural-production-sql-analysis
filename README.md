@@ -75,18 +75,56 @@ Data preparation included:
 - DBeaver
 - SQL
 
+## Repository Structure
+
+```text
+├── README.md
+├── sql_queries
+│   └── sample_queries.sql
+├── screenshots
+└── datasets
+```
+
+## Project Screenshots
+
+### Database Tables
+
+![Database Tables](screenshots/database_tables.png)
+
+### SQL Query Execution
+
+![SQL Query](screenshots/sql_query_execution.png)
+
+### Query Results
+
+![Query Results](screenshots/query_results.png)
+
+## Business Value
+
+This project demonstrates how SQL can be used to:
+
+- Analyze agricultural production trends
+- Identify production patterns across states
+- Support data-driven reporting
+- Answer business questions using structured data
+- Generate insights for operational decision-making
+
 ## Key Learning Outcomes
 
-Through this project, I developed practical experience in:
+Through this project, I gained hands-on experience in:
 
-- Database management
-- Data cleaning
-- SQL querying
-- Relational database analysis
-- Business intelligence reporting
-- Data-driven decision making
+- Designing and managing relational databases
+- Importing and cleaning structured datasets
+- Writing SQL queries for business analysis
+- Using aggregate functions, joins, and subqueries
+- Extracting actionable insights from data
+- Supporting data-driven decision making
 
 ## Author
 
 Richard Adutwum
-Data Analyst | Marketing Professional | SQL | Python | Excel | Data Visualization // Business Intelligence | Marketing Analytics
+
+Data Analyst | SQL | Python | Excel | Business Intelligence | Marketing Analytics
+
+GitHub: https://github.com/Adutwum-art
+LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN-URL
