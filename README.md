@@ -89,15 +89,15 @@ Data preparation included:
 
 ### Database Tables
 
-![Database Tables](screenshots/database_tables.png)
+![Database Tables](database_tables.png)
 
 ### SQL Query Execution
 
-![SQL Query](screenshots/sql_query_execution.png)
+![SQL Query](sql_query_execution.png)
 
 ### Query Results
 
-![Query Results](screenshots/query_results.png)
+![Query Results](query_results.png)
 
 ## Business Value
 
