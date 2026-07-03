@@ -127,4 +127,4 @@ Richard Adutwum
 Data Analyst | SQL | Python | Excel | Business Intelligence | Marketing Analytics
 
 GitHub: https://github.com/Adutwum-art
-LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN-URL
+LinkedIn: https://www.linkedin.com/in/richard-adutwum-135a0091/
