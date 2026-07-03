@@ -1,0 +1,100 @@
+-- ============================================
+-- USDA Agricultural Production SQL Analysis
+-- Sample Queries
+-- Author: Richard Adutwum
+-- ============================================
+
+-- Total Milk Production for 2023
+
+SELECT SUM(Value) AS total_milk_production_2023
+FROM milk_production
+WHERE Year = 2023;
+
+
+-- Total Coffee Production for 2015
+
+SELECT SUM(Value) AS total_coffee_production_2015
+FROM coffee_production
+WHERE Year = 2015;
+
+
+-- Average Honey Production for 2022
+
+SELECT AVG(Value) AS average_honey_production_2022
+FROM honey_production
+WHERE Year = 2022;
+
+
+-- Highest Yogurt Production Value for 2022
+
+SELECT MAX(Value) AS highest_yogurt_production_2022
+FROM yogurt_production
+WHERE Year = 2022;
+
+
+-- Retrieve State ANSI Code
+
+SELECT State_ANSI
+FROM state_lookup
+WHERE UPPER(State) = 'IOWA';
+
+
+-- States Producing Both Honey and Milk in 2022
+
+SELECT DISTINCT h.State_ANSI
+FROM honey_production h
+INNER JOIN milk_production m
+    ON h.State_ANSI = m.State_ANSI
+WHERE h.Year = 2022
+  AND m.Year = 2022;
+
+
+-- Total Yogurt Production for States
+-- with Cheese Production Data
+
+SELECT SUM(Value)
+FROM yogurt_production
+WHERE Year = 2022
+  AND State_ANSI IN (
+      SELECT DISTINCT State_ANSI
+      FROM cheese_production
+      WHERE Year = 2022
+  );
+
+
+-- States Missing Milk Production Data in 2023
+
+SELECT s.State,
+       s.State_ANSI
+FROM state_lookup s
+LEFT JOIN (
+    SELECT DISTINCT State_ANSI
+    FROM milk_production
+    WHERE Year = 2023
+) m
+ON s.State_ANSI = m.State_ANSI
+WHERE m.State_ANSI IS NULL;
+
+
+-- Cheese Production by State
+-- Including States with No Production
+
+SELECT s.State,
+       c.Value
+FROM state_lookup s
+LEFT JOIN cheese_production c
+    ON s.State_ANSI = c.State_ANSI
+   AND c.Year = 2023
+   AND c.Period = 'APR';
+
+
+-- Average Coffee Production for Years
+-- Where Honey Production Exceeded 1 Million
+
+SELECT AVG(c.Value)
+FROM coffee_production c
+WHERE c.Year IN (
+    SELECT DISTINCT h.Year
+    FROM honey_production h
+    WHERE h.Value > 1000000
+);
